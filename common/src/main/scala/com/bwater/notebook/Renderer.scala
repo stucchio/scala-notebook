@@ -40,19 +40,16 @@ object Renderer extends LowPriorityRenderers {
     def render(value: breeze.bokeh.Plot): NodeSeq = {
       import scala.xml._
       val containerId = java.util.UUID.randomUUID.toString
-      val result = <div class="bokeh">
+      <div class="bokeh">
         <div id={containerId}></div>
         <script type="text/javascript">{Unparsed("""
 setTimeout(function () {
-""" +
+""" + //At the time the script is rendered, the result is not actually part of the DOM. So we need to wait 10ms for the div to be available before we can render inside it.
 value.javascript(containerId) +
 """
 }, 10);
 """)}</script>
       </div>
-      println("Result: ")
-      println(result)
-      result
     }
   }
   implicit object anyValAsItself extends Renderer[AnyVal] {

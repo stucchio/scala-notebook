@@ -12,6 +12,18 @@ Based on the IPython notebook project, this project will let you interact with S
 
 While I think this tool will be helpful for everyone using Scala, I expect it to be particularly valuable for the scientific and analytics community.
 
+About This **HIGHLY EXPERIMENTAL** Fork
+----------------------------------------
+
+This fork is an experimental version of Scala Notebook with the goal of being a Scala-based environment for doing mathematics.
+
+It is more or less the master branch of Scala Notebook, but including the libraries [Breeze](https://github.com/scalanlp/breeze) and the
+experimental [Breeze-Bokeh](https://github.com/stucchio/breeze-bokeh).  It also includes a `Renderer[Plot]` object which allows Breeze-Bokeh plots to
+be displayed.
+
+This gives us an IPython-Notebook/Matlab/Mathematica style interactive environment for Scala.
+
+Breeze-Bokeh is NOT FINISHED. It only has lineplots and scatterplots.
 
 Using Scala Notebook
 ----------------------
@@ -43,7 +55,7 @@ the user's actions from the web server, allowing a restart of the client process
 To that end, the project is organized as follows:
 * *server* is the web server
 * *common* are the classes shared by both
-* *observable* 
+* *observable*
 * *kernel*
 * *subprocess*
 
