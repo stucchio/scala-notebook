@@ -7,6 +7,7 @@
 
 package com.bwater.notebook
 
+import com.bwater.notebook.widgets.scopedScript
 import xml.{NodeBuffer, Text, NodeSeq}
 import runtime.BoxedUnit
 
@@ -34,6 +35,25 @@ object Renderer extends LowPriorityRenderers {
   }
   implicit object stringAsItself extends Renderer[String] {
     def render(value: String) = Text(value)
+  }
+  implicit object plotAsItself extends Renderer[breeze.bokeh.Plot] {
+    def render(value: breeze.bokeh.Plot): NodeSeq = {
+      import scala.xml._
+      val containerId = java.util.UUID.randomUUID.toString
+      val result = <div class="bokeh">
+        <div id={containerId}></div>
+        <script type="text/javascript">{Unparsed("""
+setTimeout(function () {
+""" +
+value.javascript(containerId) +
+"""
+}, 10);
+""")}</script>
+      </div>
+      println("Result: ")
+      println(result)
+      result
+    }
   }
   implicit object anyValAsItself extends Renderer[AnyVal] {
     def render(value: AnyVal) = if (value == BoxedUnit.UNIT) NodeSeq.Empty else Text(value.toString)

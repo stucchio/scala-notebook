@@ -31,7 +31,9 @@ object NotebookBuild extends Build {
     resolvers in ThisBuild ++= Seq(
       Resolver.typesafeRepo("releases"),
       Resolver.typesafeIvyRepo("releases"),
-      Resolver.typesafeIvyRepo("snapshots")
+      Resolver.typesafeIvyRepo("snapshots"),
+      "localtmp" at "file:///tmp/breeze-bokeh-publish"
+//      "chrisstucchio" at "http://maven.chrisstucchio.com/"
   ),
 
     compileOrder := CompileOrder.Mixed,
@@ -91,7 +93,10 @@ object NotebookBuild extends Build {
         unfilteredJson,
         scalaTest,
         "log4j" % "log4j" % "1.2.+",
-        "org.scalaz" %% "scalaz-core" % "7.0.5"
+        "org.scalaz" %% "scalaz-core" % "7.0.5",
+        "org.scalanlp" % "breeze_2.10" % "0.7",
+        "org.scalanlp" % "breeze-natives_2.10" % "0.7",
+        "com.bayesianwitch" % "breeze-bokeh_2.10" % "0.01.2"
       )
     )
 
@@ -136,7 +141,10 @@ object NotebookBuild extends Build {
         commonsIO,
         commonsHttp,
         scalaTest,
-        "org.fusesource.scalate" %% "scalate-core" % "1.6.1"
+        "org.fusesource.scalate" %% "scalate-core" % "1.6.1",
+        "org.scalanlp" % "breeze_2.10" % "0.7",
+        "org.scalanlp" % "breeze-natives_2.10" % "0.7",
+        "com.bayesianwitch" % "breeze-bokeh_2.10" % "0.01.2"
       )
     )
 

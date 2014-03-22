@@ -15,7 +15,8 @@
     <meta charset="utf-8" />
 
     <title>${title}</title>
-
+    <script src="http://cdn.pydata.org/bokeh-0.4.min.js" type="text/javascript"></script>
+    <link href="http://cdn.pydata.org/bokeh-0.4.min.css" rel="stylsheet" type="text/css"></link>
     <link rel="stylesheet" href="${static_url("jquery/css/base/jquery-ui.min.css")}" type="text/css" />
     <link rel="stylesheet" href="${static_url("css/boilerplate.css")}" type="text/css" />
     <link rel="stylesheet" href="${static_url("css/fbm.css")}" type="text/css" media="screen"/>
@@ -23,7 +24,7 @@
     ${unescape(stylesheet)}
 
     ${unescape(meta)}
-    
+
 </head>
 
 <body ${unescape(params)}>
@@ -33,12 +34,12 @@
         <span id="login_widget"></span>
 
         ${unescape(header)}
-   
+
        <div id="logo">
        <!-- TODO: External logo hook -->
         </div>
         </div>
-        
+
     </div>
     <div id="expand_header"><a href="#"><i class="icon-chevron-down"></i></a></div>
 
