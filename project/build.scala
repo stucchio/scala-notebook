@@ -32,7 +32,7 @@ object NotebookBuild extends Build {
       Resolver.typesafeRepo("releases"),
       Resolver.typesafeIvyRepo("releases"),
       Resolver.typesafeIvyRepo("snapshots"),
-      "chrisstucchio" at "file:///tmp/breeze-bokeh-publish/"
+      "chrisstucchio" at "http://maven.chrisstucchio.com"
   ),
 
     compileOrder := CompileOrder.Mixed,
