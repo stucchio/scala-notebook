@@ -1,8 +1,8 @@
 {
   "metadata":{
     "name":"Welcome",
-    "user_save_timestamp":"2014-03-22T13:14:08.788Z",
-    "auto_save_timestamp":"2014-03-22T13:13:49.505Z"
+    "user_save_timestamp":"2014-03-24T04:57:18.814Z",
+    "auto_save_timestamp":"2014-03-24T04:57:08.604Z"
   },
   "worksheets":[{
     "cells":[{
@@ -16,70 +16,70 @@
       "input":"// Simple expressions\nList(1,2,3).reverse\n ",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":16,
+      "prompt_number":1,
       "outputs":[]
     },{
       "cell_type":"code",
       "input":"// Functions\ndef fact(n: Int):Int = if (n == 0) 1 else n*fact(n-1)",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":17,
+      "prompt_number":2,
       "outputs":[]
     },{
       "cell_type":"code",
       "input":"// Functions are callable after they are defined. By convention, notebooks evaluate from top to bottom\n// but you must evaluate a cell before it is used\nfact(10)",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":18,
+      "prompt_number":3,
       "outputs":[]
     },{
       "cell_type":"code",
       "input":"// HTML return types are also suppored\n<table>{ for (row <- 1 to 5) yield \n  <tr>{ for (col <- 1 to 4) yield <td>{row*col}</td> }</tr>\n} </table>",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":19,
+      "prompt_number":4,
       "outputs":[]
     },{
       "cell_type":"code",
       "input":"// Reactive components allow dynamic communication to Scala and Javascript\nval ib = new InputBox(\"\")",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":20,
+      "prompt_number":5,
       "outputs":[]
     },{
       "cell_type":"code",
       "input":"val ib2 = new InputBox(\"\")",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":21,
+      "prompt_number":6,
       "outputs":[]
     },{
       "cell_type":"code",
       "input":"// After running this, type text in the second box and it appears in the first\nib.currentValue <-- ib2.currentValue",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":22,
+      "prompt_number":7,
       "outputs":[]
     },{
       "cell_type":"code",
-      "input":"import breeze.linalg._\nimport breeze.bokeh._\nimport com.bayesianwitch.injera.misc.UUIDWeakReferenceRegistry\n\nimplicit val registry = new UUIDWeakReferenceRegistry[Plot]\n\n  ",
+      "input":"import breeze.linalg._\nimport breeze.bokeh._\n\n  ",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":23,
+      "prompt_number":8,
       "outputs":[]
     },{
       "cell_type":"code",
       "input":"val x = DenseVector.range(0,32)\nval y = x :* x",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":24,
+      "prompt_number":9,
       "outputs":[]
     },{
       "cell_type":"code",
-      "input":"import breeze.bokeh.plots._\nimport JsonNumericArraySerializers._\n  \nLine(x,y,\"x\", \"y\", None, lineWidth=2)",
+      "input":"import breeze.bokeh.plots._\nimplicit val ps = new PlotServer[Unit] {\n  def registerImpl(plot: Plot): Unit = ()\n}\n  \nLine(x,y,\"x\", \"y\", None, lineWidth=2)",
       "language":"scala",
       "collapsed":false,
-      "prompt_number":25,
+      "prompt_number":11,
       "outputs":[]
     },{
       "cell_type":"code",

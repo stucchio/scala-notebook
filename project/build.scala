@@ -32,8 +32,7 @@ object NotebookBuild extends Build {
       Resolver.typesafeRepo("releases"),
       Resolver.typesafeIvyRepo("releases"),
       Resolver.typesafeIvyRepo("snapshots"),
-      "localtmp" at "file:///tmp/breeze-bokeh-publish"
-//      "chrisstucchio" at "http://maven.chrisstucchio.com/"
+      "chrisstucchio" at "file:///tmp/breeze-bokeh-publish/"
   ),
 
     compileOrder := CompileOrder.Mixed,
@@ -96,7 +95,7 @@ object NotebookBuild extends Build {
         "org.scalaz" %% "scalaz-core" % "7.0.5",
         "org.scalanlp" % "breeze_2.10" % "0.7",
         "org.scalanlp" % "breeze-natives_2.10" % "0.7",
-        "com.bayesianwitch" % "breeze-bokeh_2.10" % "0.01.2"
+        "com.bayesianwitch" % "breeze-bokeh_2.10" % "0.01.3"
       )
     )
 
