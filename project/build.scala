@@ -32,7 +32,8 @@ object NotebookBuild extends Build {
       Resolver.typesafeRepo("releases"),
       Resolver.typesafeIvyRepo("releases"),
       Resolver.typesafeIvyRepo("snapshots"),
-      "chrisstucchio" at "http://maven.chrisstucchio.com"
+      "chrisstucchio" at "http://maven.chrisstucchio.com",
+      "spray" at "http://repo.spray.io/"
   ),
 
     compileOrder := CompileOrder.Mixed,
